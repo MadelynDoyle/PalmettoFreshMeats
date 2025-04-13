@@ -1,5 +1,7 @@
-import Jeanne from '../assets/images/Jeanne.jpg'
-import John from '../assets/images/John.jpg'
+import '../styles/styles.css';
+import Jeanne from '../assets/images/Jeanne.jpg';
+import John from '../assets/images/John.jpg';
+
 const About = () => (
     <main className="main-content">
       <section className="about-content">

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import '../styles/styles.css';
+import Logo from '../assets/images/logo.jpg';
 
 const Navbar = () => (
   <header className="main-header">
     <div className="header-top">
       <section className="header-logo">
-        <img src="/images/logo.jpg" alt="Palmetto Fresh Meats Logo" />
+        <img src={Logo} alt="Palmetto Fresh Meats Logo" className="logo" />
       </section>
       <section className="header-name">
         <h1>Palmetto Fresh Meats</h1>

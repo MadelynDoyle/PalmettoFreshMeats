@@ -1,7 +1,9 @@
-import Phone from '../assets/images/phone.jpg'
-import Email from '../assets/images/email.jpg'
-import Facebook from '../assets/images/facebook.jpg'
-import Clock from '../assets/images/clock.jpg'
+import '../styles/styles.css';
+import Phone from '../assets/images/phone.jpg';
+import Email from '../assets/images/email.jpg';
+import Facebook from '../assets/images/facebook.jpg';
+import Clock from '../assets/images/clock.jpg';
+
 const ContactUs = () => {
     return (
       <main className="main-content contact-page">

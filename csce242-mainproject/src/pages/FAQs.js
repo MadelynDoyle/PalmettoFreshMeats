@@ -1,3 +1,4 @@
+import '../styles/styles.css';
 const FAQs = () => (
     <main className="main-content">
       <div className="faq-div">

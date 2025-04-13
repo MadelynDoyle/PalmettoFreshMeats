@@ -1,4 +1,4 @@
-
+import '../styles/styles.css';
 import { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
 import PorkCard from '../components/PorkCard';
