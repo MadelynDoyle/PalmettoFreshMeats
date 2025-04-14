@@ -1,12 +1,17 @@
-const ProductCard = ({ product }) => (
+const ProductCard = ({ product }) => {
+  return (
     <div className="product-card">
-      <img src={`/${product.image}`} alt={product.name} className="product-image" />
-      <h4>{product.name}</h4>
-      <p><strong>Cut:</strong> {product.cutDescription}</p>
-      <p><strong>Weight:</strong> {product.averageWeight}</p>
-      <p><strong>Price:</strong> {product.pricePerPound}</p>
+        <img src={`https://palmettofreshmeatsserver.onrender.com/${product.image}`} alt={product.name} />
+      <div className="product-info">
+        <h4>{product.name}</h4>
+        <p>{product.cutDescription}</p>
+        <p>{product.averageWeight}</p>
+        <p>{product.pricePerPound}</p>
+      </div>
     </div>
   );
-  
-  export default ProductCard;
-  
+};
+
+export default ProductCard;
+
+

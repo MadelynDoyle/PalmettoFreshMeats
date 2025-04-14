@@ -1,12 +1,17 @@
-const PorkCard = ({ pork }) => (
-    <div className="pork-card">
-      <img src={`/${pork.image}`} alt={pork.name} className="product-image" />
-      <h4>{pork.name}</h4>
-      <p><strong>Cut:</strong> {pork.cutDescription}</p>
-      <p><strong>Weight:</strong> {pork.averageWeight}</p>
-      <p><strong>Price:</strong> {pork.pricePerPound}</p>
+const PorkCard = ({ pork }) => {
+  return (
+    <div className="product-card">
+      <img src={`https://palmettofreshmeatsserver.onrender.com/${pork.image}`} alt={pork.name} />
+      <div className="product-info">
+        <h4>{pork.name}</h4>
+        <p>{pork.cutDescription}</p>
+        <p>{pork.averageWeight}</p>
+        <p>{pork.pricePerPound}</p>
+      </div>
     </div>
   );
-  
-  export default PorkCard;
+};
+
+export default PorkCard;
+
   
