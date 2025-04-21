@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/PalmettoFreshMeats/static/css/main.fe64b2ac.css",
-    "main.js": "/PalmettoFreshMeats/static/js/main.42b232cf.js",
+    "main.js": "/PalmettoFreshMeats/static/js/main.4333f588.js",
     "static/media/meatcase1.jpg": "/PalmettoFreshMeats/static/media/meatcase1.8b04fff62666688f2006.jpg",
     "static/media/front2.jpg": "/PalmettoFreshMeats/static/media/front2.fb70440c91a214ebeb0e.jpg",
     "static/media/Jeanne.jpg": "/PalmettoFreshMeats/static/media/Jeanne.7a5cc6ad6ca928d46bdc.jpg",
@@ -9,10 +9,10 @@
     "static/media/logo.jpg": "/PalmettoFreshMeats/static/media/logo.e7ef672c73086b9d7548.jpg",
     "index.html": "/PalmettoFreshMeats/index.html",
     "main.fe64b2ac.css.map": "/PalmettoFreshMeats/static/css/main.fe64b2ac.css.map",
-    "main.42b232cf.js.map": "/PalmettoFreshMeats/static/js/main.42b232cf.js.map"
+    "main.4333f588.js.map": "/PalmettoFreshMeats/static/js/main.4333f588.js.map"
   },
   "entrypoints": [
     "static/css/main.fe64b2ac.css",
-    "static/js/main.42b232cf.js"
+    "static/js/main.4333f588.js"
   ]
 }
