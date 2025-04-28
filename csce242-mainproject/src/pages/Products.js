@@ -12,6 +12,7 @@ const Products = () => {
     averageWeight: '',
     price: '',
     image: '',
+    imageFile: null, 
   });
   const [successMsg, setSuccessMsg] = useState('');
   const [formErrors, setFormErrors] = useState({});
