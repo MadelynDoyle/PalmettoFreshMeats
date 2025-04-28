@@ -33,9 +33,10 @@ const Products = () => {
     if (!formData.cutDescription.trim()) errors.cutDescription = 'Description is required';
     if (!formData.averageWeight.trim()) errors.averageWeight = 'Average weight is required';
     if (!formData.price || isNaN(formData.price)) errors.price = 'Valid price required';
-    if (!formData.image.trim()) errors.image = 'Image URL is required';
+    if (!formData.imageFile) errors.image = 'Image file is required'; 
     return errors;
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
