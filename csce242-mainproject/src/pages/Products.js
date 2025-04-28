@@ -42,25 +42,31 @@ const Products = () => {
     const errors = validateForm();
     setFormErrors(errors);
     if (Object.keys(errors).length > 0) return;
-
+  
     const endpoint = editingId
       ? `https://palmettofreshmeatsserver.onrender.com/api/beef/${editingId}`
       : `https://palmettofreshmeatsserver.onrender.com/api/beef`;
-
+  
     const method = editingId ? 'PUT' : 'POST';
-
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('cutDescription', formData.cutDescription);
+    formDataToSend.append('averageWeight', formData.averageWeight);
+    formDataToSend.append('pricePerPound', `$${parseFloat(formData.price).toFixed(2)} per pound`);
+  
+    // IMPORTANT: For the image, you need to attach the actual FILE, not a text URL
+    // So you need to add a file upload input on your form (I'll show you below)
+  
+    if (formData.imageFile) {
+      formDataToSend.append('img', formData.imageFile);
+    }
+  
     const response = await fetch(endpoint, {
       method,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: formData.name,
-        cutDescription: formData.cutDescription,
-        averageWeight: formData.averageWeight,
-        pricePerPound: `$${parseFloat(formData.price).toFixed(2)} per pound`,
-        image: formData.image,
-      }),
+      body: formDataToSend, // no headers setting, browser will do it automatically
     });
-
+  
     const result = await response.json();
     if (response.ok) {
       if (editingId) {
@@ -70,8 +76,8 @@ const Products = () => {
         setProducts([...products, result]);
         setSuccessMsg('Product added successfully!');
       }
-
-      setFormData({ name: '', cutDescription: '', averageWeight: '', price: '', image: '' });
+  
+      setFormData({ name: '', cutDescription: '', averageWeight: '', price: '', image: '', imageFile: null });
       setFormErrors({});
       setEditingId(null);
     } else {
@@ -79,6 +85,7 @@ const Products = () => {
       setFormErrors({ submit: result.message || 'Failed to save product' });
     }
   };
+  
 
   const handleEdit = (product) => {
     setFormData({
@@ -145,12 +152,12 @@ const Products = () => {
           onChange={e => setFormData({ ...formData, price: e.target.value })}
         />
         {formErrors.price && <p className="error">{formErrors.price}</p>}
-
-        <label>Image URL:</label>
-        <input
-          value={formData.image}
-          onChange={e => setFormData({ ...formData, image: e.target.value })}
-        />
+        <label>Upload Image:</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => setFormData({ ...formData, imageFile: e.target.files[0] })}
+          />
         {formErrors.image && <p className="error">{formErrors.image}</p>}
 
         {editingId && (
