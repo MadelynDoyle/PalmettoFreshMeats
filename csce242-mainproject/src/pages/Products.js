@@ -58,16 +58,13 @@ const Products = () => {
     formDataToSend.append('averageWeight', formData.averageWeight);
     formDataToSend.append('pricePerPound', `$${parseFloat(formData.price).toFixed(2)} per pound`);
   
-    // IMPORTANT: For the image, you need to attach the actual FILE, not a text URL
-    // So you need to add a file upload input on your form (I'll show you below)
-  
     if (formData.imageFile) {
       formDataToSend.append('img', formData.imageFile);
     }
   
     const response = await fetch(endpoint, {
       method,
-      body: formDataToSend, // no headers setting, browser will do it automatically
+      body: formDataToSend,
     });
   
     const result = await response.json();
